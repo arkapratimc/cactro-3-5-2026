@@ -4,7 +4,7 @@ import {
 import {
     useParams, useNavigate, useLoaderData 
 } from "react-router";
-import styles from "./StoryView.module.css";
+import styles from "./storyview.module.css";
 
 export function loader() {
     // in both loaders
