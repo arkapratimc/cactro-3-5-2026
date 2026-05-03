@@ -220,6 +220,7 @@ interface Story {
 }
 
 export default function StoryView() {
+    
     const [
         direction,
         setDirection
@@ -278,6 +279,7 @@ export default function StoryView() {
             }
         }
     };
+    const goNextRef = useRef(goNext);
 
     const goPrev = () => {
         if ( userIndex > 0 ) {
@@ -328,7 +330,7 @@ export default function StoryView() {
                 () => {
                     setProgress( ( prev ) => {
                         if ( prev >= 100 ) {
-                            goNext();
+                            goNextRef.current();
                             return 100;
                         }
                         return prev + 1;
@@ -343,6 +345,10 @@ export default function StoryView() {
             isAssetLoaded
         ] 
     );
+    // keep it fresh every render
+useEffect(() => {
+    goNextRef.current = goNext;
+});
 
     if ( !currentStory ) return null;
 
