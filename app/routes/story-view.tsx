@@ -6,7 +6,7 @@ import {
 } from "react-router";
 import styles from "./storyview.module.css";
 
-export function loader() {
+export function clientLoader() {
     // in both loaders
     const res = [
         {

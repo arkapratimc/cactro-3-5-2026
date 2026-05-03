@@ -22,7 +22,7 @@ export function meta( {
     ];
 }
 
-export function loader() {
+export function clientLoader() {
     // in both loaders
     const res = [
         {
